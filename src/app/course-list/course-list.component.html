@@ -1,0 +1,16 @@
+<div>
+  <div class="alert alert-info" role="alert" *ngFor="let course of courses">
+    <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap">
+      <div class="p-2">
+        <a href="{{ course.fields.url }}" target="_blank"><img src="{{ course.fields.courseImage.fields.file.url }}" class="rounded" width="196" /></a>
+      </div>
+      <div class="p-2">
+        <h5 class="alert-heading"><a href="{{ course.fields.url }}" target="_blank">{{ course.fields.title }}</a></h5>
+        <p><i>{{ course.fields.author }}</i></p>
+        <div [innerHTML]="course.fields.description | mdToHtml"></div>
+        <a href="{{ course.fields.url }}" target="_blank" class="btn btn-success">Go To Course</a>
+        <button (click)="goToCourseDetailsPage(course.sys.id)" class="btn btn-info">Course Details</button>
+      </div>
+    </div>
+  </div>
+</div>

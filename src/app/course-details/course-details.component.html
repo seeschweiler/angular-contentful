@@ -1,0 +1,10 @@
+<div *ngIf="course.fields">
+  <a href="{{ course.fields.url }}" target="_blank"><img width="40%" style="margin: 10px" class="float-right rounded" src="{{ course.fields.courseImage.fields.file.url }}"/></a>
+  <h2><a href="{{ course.fields.url }}" target="_blank">{{ course.fields.title }}</a></h2>
+  <i>by {{ course.fields.author }}</i>
+  <br><br>
+  <div [innerHTML]="course.fields.description | mdToHtml"></div>
+  <div [innerHTML]="course.fields.longDescription | mdToHtml"></div>
+  <a href="{{ course.fields.url }}" target="_blank" class="btn btn-success">Go To Course</a>
+  <button (click)="goToList()" class="btn btn-danger">Back To List</button>
+</div>
